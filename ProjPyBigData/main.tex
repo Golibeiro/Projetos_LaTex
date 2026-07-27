@@ -1,0 +1,1132 @@
+\documentclass[12pt, a4paper, brazil]{article}
+
+% --- PACOTES ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[a4paper, left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{float}
+\usepackage{hyperref}
+
+% --- CONFIGURAÇÕES DE TEXTO ---
+\onehalfspacing 
+\setlength{\parindent}{1.5cm} 
+
+\begin{document}
+\sloppy 
+
+% --- 1. CAPA ---
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=5cm]{estacio.png}
+        \vspace{0.5cm}
+    \end{center}
+    \begin{center}
+        \begin{minipage}{0.2\textwidth}
+            % Sobe a imagem com o nome 'logo_ufpi.png'
+            %\includegraphics[width=2.5cm]{estacio.png} 
+        \end{minipage}
+        \begin{minipage}{0.7\textwidth}
+            \centering
+            {\small \textbf{CENTRO UNIVERSITÁRIO ESTÁCIO DE SÁ}} \\
+            {\small \textbf{CAMPUS TERESINA}} \\
+            {\small DISCIPLINA: Ciência da Computação} \\
+
+        \end{minipage}
+        
+        \vspace{4cm}
+        
+        {\large \textbf{DADOS EM CAMPO: DESMISTIFICANDO O IMPACTO ECONÔMICO DO FUTEBOL COM CIÊNCIA DE DADOS}}
+        
+        \vspace{2cm}
+        
+        {\small 
+        Caic Costa Santos\\
+        Cauã Mendes Barros\\
+        Danylo Alves Ribeiro\\
+        Gabriel de Oliveira Barbosa\\
+        Liam Vitor Freitas Lopes\\
+        Lucas Carlos de Macedo\\
+        Lucas Oliveira Pinto Barros\\
+        Maria Clara Mariano Gomes\\
+        Murilo Coelho da Silva\\
+        Nuno Rafael de Moura Bezerra}
+        
+        \vspace{1cm}
+        {\small
+        Prof. Douglas Lopes de Sousa Mendes}
+      
+        \vfill
+        {\small \textbf{TERESINA – PI}} \\
+        {\small \textbf{2026}}
+    \end{center}
+\end{titlepage}
+
+% --- 3. SUMÁRIO ---
+\newpage
+\tableofcontents
+\newpage
+
+% --- 4. DIAGNÓSTICO E TEORIZAÇÃO ---
+\section{DIAGNÓSTICO E TEORIZAÇÃO}
+
+\subsection{Identificação das partes interessadas e parceiros}
+O presente projeto extensionista, desenvolvido no contexto da disciplina de Big Data em Python, tem como foco a análise da correlação entre indicadores econômicos e o desempenho no futebol, considerando tanto clubes quanto seleções nacionais. Para garantir a relevância social e acadêmica da proposta, foram identificadas diferentes partes interessadas, com perfis variados, que se beneficiam direta ou indiretamente dos resultados do estudo.
+
+\subsubsection{Partes interessadas principais}
+A primeira categoria de partes interessadas é composta por estudantes universitários, especialmente aqueles matriculados em cursos das áreas de Tecnologia da Informação, Ciência de Dados, Economia e Educação Física. Esses participantes possuem, em sua maioria, faixa etária entre 18 e 35 anos. O perfil socioeconômico é diversificado, abrangendo estudantes de classes média e média-baixa, muitos dos quais têm acesso limitado a ferramentas avançadas de análise de dados fora do ambiente acadêmico.
+
+Além disso, o projeto também contempla pesquisadores e professores das áreas de economia, estatística e esportes, que podem utilizar os resultados como base para estudos futuros.
+
+Outra parcela relevante das partes interessadas são os torcedores e o público geral interessado em futebol, que representam ampla diversidade socioeconômica. No contexto brasileiro, o futebol é um elemento cultural significativo, atingindo pessoas de diferentes gêneros, faixas etárias e níveis de escolaridade.
+
+\subsubsection{Partes interessadas secundárias}
+Incluem-se também como stakeholders secundários os gestores esportivos e dirigentes de clubes, que podem se beneficiar das análises ao compreender melhor como fatores econômicos influenciam o desempenho esportivo.
+
+Outro grupo relevante são os profissionais da área de dados e tecnologia, incluindo analistas de dados, cientistas de dados e desenvolvedores, que podem se interessar pela aplicação prática de ferramentas como Python e bibliotecas de Big Data na análise esportiva.
+
+\subsubsection{Parceiros do projeto}
+O principal parceiro do projeto é a Estácio, responsável por fornecer suporte acadêmico, orientação docente e infraestrutura tecnológica necessária para o desenvolvimento das atividades.
+
+Além disso, podem ser considerados parceiros indiretos:
+\begin{itemize}
+    \item Plataformas de dados esportivos, como APIs públicas de futebol;
+    \item Bases de dados econômicos de acesso aberto, como indicadores de PIB, inflação e renda per capita;
+    \item Comunidades online de análise de dados e esportes.
+\end{itemize}
+
+Caso aplicável, o projeto poderá formalizar parcerias por meio de termos de cooperação, especialmente com instituições acadêmicas ou organizações que disponibilizem dados. Esses documentos servem como evidência do acordo entre as partes interessadas, garantindo transparência e legitimidade ao projeto.
+
+\subsection{Problemática e/ou problemas identificados}
+Na era da informação, existe um vasto volume de dados abertos disponíveis sobre estatísticas esportivas e indicadores socioeconômicos. No entanto, a principal problemática identificada é a baixa literacia de dados (data literacy) por parte da população em geral. O cidadão comum possui dificuldade em acessar, cruzar e interpretar bases de dados complexas para validar suas opiniões.
+
+Discute-se frequentemente se o sucesso esportivo de uma nação ou a realização de megaeventos reflete em melhoria econômica, especialmente no Produto Interno Bruto (PIB). Entretanto, essas discussões são baseadas majoritariamente no senso comum, devido à inacessibilidade técnica dos dados.
+
+\subsubsection{Problema priorizado}
+A situação-problema escolhida como foco deste projeto é a barreira de comunicação e visualização entre dados complexos — economia e esportes — e o entendimento do público leigo, o que gera desinformação e afasta a comunidade do pensamento analítico e científico.
+
+\subsubsection{Demanda sociocomunitária e escuta}
+A identificação dessa demanda partiu da observação empírica do grupo de trabalho sobre as dinâmicas de interação da comunidade digital, incluindo redes sociais, caixas de comentários e grupos de discussão sobre esportes e eventos globais.
+
+A partir do acompanhamento dessas interações cotidianas, notou-se que, embora haja grande engajamento público ao debater a relação entre o sucesso no futebol e a economia do país, existe desinteresse ou incompreensão quando são apresentados dados puros, planilhas ou jargões estatísticos.
+
+Assim, a demanda identificada na comunidade consumidora de mídia esportiva é por tradução e democratização da informação, justificando a criação de visualizações interativas que aproximem o público geral da cultura de análise de dados.
+
+\subsection{Justificativa}
+
+\subsubsection{ Pertinência acadêmica e Aprendizagem Baseada em Projetos (PBL)}
+A problemática escolhida é academicamente pertinente, pois permite a aplicação da Aprendizagem Baseada em Projetos (PBL) em sua essência. Em vez de trabalhar com cenários hipotéticos, a equipe atuará na resolução de uma demanda real da sociedade: a necessidade de informação clara e acessível.
+
+O projeto exige a produção, tratamento e aplicação empírica de conhecimentos estatísticos e computacionais para gerar um produto — visualizações de dados — que possui utilidade pública imediata.
+
+\subsubsection{Relação com o curso de Ciência da Computação}
+Para a formação em Ciência da Computação, o projeto é fundamental, pois integra e tangibiliza disciplinas centrais do currículo, como Banco de Dados, Mineração de Dados (KDD) e Interação Humano-Computador (IHC).
+
+O grupo desenvolverá habilidades técnicas ao coletar, limpar e cruzar bases de dados heterogêneas, tanto esportivas quanto econômicas, além de aplicar conceitos de usabilidade e design de interfaces para criar dashboards que traduzam a complexidade algorítmica em recursos visuais simples para o usuário final.
+
+\subsubsection{Motivações do grupo de trabalho}
+A principal motivação da equipe é o impacto social tecnológico. Acredita-se que o papel do cientista da computação vai além de escrever códigos, envolvendo também facilitar o acesso à informação.
+
+Utilizar o futebol — fenômeno de forte identidade cultural — como ferramenta didática constitui a estratégia escolhida para desmistificar a Ciência de Dados, demonstrando que a tecnologia pode atuar como ponte para a educação cidadã.
+
+\subsection{Objetivos/resultados/efeitos a serem alcançados}
+
+\subsubsection{Objetivo geral}
+O projeto busca alcançar os seguintes objetivos:
+
+Analisar a correlação entre o desempenho técnico das seleções e o impacto econômico (PIB) nos países-sede e vencedores, utilizando técnicas de mineração de dados para identificar se o sucesso em campo reflete crescimento financeiro imediato ou de longo prazo;
+
+\subsubsection{Objetivos específicos}
+\begin{itemize}
+    \item Desenvolver visualizações de dados interativas e acessíveis que traduzam estatísticas complexas, como gols marcados versus títulos e evolução da ofensividade nas Copas do Mundo, em informações compreensíveis para o público geral;
+    \item Promover a democratização do conhecimento sobre análise de dados, incentivando o pensamento analítico e científico;
+    \item Avaliar a percepção do público sobre a influência da economia no futebol por meio de questionários aplicados no Google Forms, antes e após a exposição dos dados, medindo o nível de compreensão e interesse gerado pela integração entre esporte e economia.
+\end{itemize}
+
+\subsection{Referencial teórico}
+Para a fundamentação das ações deste projeto, o referencial teórico baseia-se em duas frentes principais: a Economia do Esporte e a Ciência de Dados voltada para a Visualização da Informação.
+
+\subsubsection{O impacto econômico de megaeventos esportivos}
+A análise da relação entre futebol e desenvolvimento financeiro de uma nação encontra respaldo na economia do esporte. Dados governamentais corroboram a premissa de que megaeventos afetam indicadores macroeconômicos.
+
+Segundo o Ministério do Turismo do Brasil (2013), a Copa das Confederações injetou aproximadamente R\$ 9,7 bilhões no Produto Interno Bruto nacional. Complementarmente, estudos da Fundação Instituto de Pesquisas Econômicas (FIPE) estimaram que a Copa do Mundo FIFA 2014 gerou impacto de cerca de R\$ 30 bilhões na economia brasileira.
+
+No âmbito acadêmico, pesquisas publicadas por Silva et al. indicam que o crescimento do PIB em cidades-sede é condicionado à eficiência dos investimentos realizados. Além disso, análises do Insper apontam que até mesmo o êxito esportivo, como vencer a Copa do Mundo, pode gerar impactos econômicos de curto prazo, incluindo aumento da confiança e do consumo interno.
+
+Esses estudos fornecem a base empírica que será utilizada pela equipe para mineração e análise de dados.
+
+\subsubsection{Literacia de dados e visualização da informação}
+Apesar da existência de dados robustos sobre o tema financeiro, grande parcela da população não consegue compreendê-los adequadamente. Para solucionar essa lacuna metodológica, o projeto apoia-se nos conceitos do médico e estatístico Hans Rosling.
+
+Na obra Factfulness (2018), Rosling defende que a dificuldade do público em compreender estatísticas não deriva da falta de interesse, mas da forma pouco intuitiva como os dados são apresentados. O autor argumenta que a visualização clara, gráfica e acessível constitui ferramenta essencial para transformar números complexos em conhecimento compreensível.
+
+Dessa forma, o arcabouço teórico justifica integralmente o projeto, utilizando dados econômico-esportivos validados por instituições como FIPE, IBGE, FIFA e Insper, aliados às teorias de visualização de Rosling para democratizar a informação técnica e promover a literacia digital na sociedade.
+
+% --- 5. PLANEJAMENTO E DESENVOLVIMENTO ---
+\section{PLANEJAMENTO E DESENVOLVIMENTO DO PROJETO}
+A Tabela 1 apresenta o cronograma de execução do projeto extensionista, contendo as principais etapas desenvolvidas pela equipe ao longo da disciplina de Tópicos de Big Data em Python. O cronograma foi organizado de forma sequencial, contemplando desde a definição do tema e levantamento bibliográfico até o desenvolvimento das análises em Python, criação das visualizações, elaboração do relatório final e apresentação do projeto. As datas estabelecidas permitiram acompanhar o andamento das atividades e garantir a organização das tarefas durante a execução do trabalho.
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}\hline
+            \textbf{Etapas} & \textbf{Atividade Desenvolvida} & \textbf{Data} \\ \hline
+            1 & Definição do tema e delimitação do problema & 11/03 a 18/03 \\ \hline
+            2 & Pesquisa bibliográfica e fundamentação teórica & 19/03 a 25/03 \\ \hline
+            3 & Levantamento de bases de dados econômicos e esportivos & 26/03 a 31/03 \\ \hline
+            4 & Organização, limpeza e tratamento dos dados  & 01/04 a 08/04 \\ \hline
+            5 & Entrega da primeira parte do relatório. & 06/04 \\ \hline
+            6 & Desenvolvimento das análises em Python & 10/04 a 22/04 \\ \hline
+            7 & Criação das visualizações e dashboards & 23/04 a 08/05 \\ \hline
+            8 & Entrega da segunda parte do relatório & 11/05 \\ \hline
+            9 & Análise dos resultados obtidos & 09/05 a 22/05 \\ \hline
+            10 & Entrega do relatório final & 25/05 \\ \hline
+            11 & Apresentação do projeto & 10/06 \\ \hline
+        \end{tabular}
+        \caption{Cronograma do Projeto}
+        \label{tab:placeholder}
+    \end{table}
+\subsection{Plano de trabalho}
+O plano de trabalho do presente projeto foi estruturado de forma colaborativa entre os integrantes da equipe, utilizando ferramentas digitais para organização, comunicação e acompanhamento das atividades desenvolvidas. As ações foram planejadas com o objetivo de garantir o cumprimento das metas propostas, promovendo integração entre pesquisa, análise de dados e desenvolvimento das visualizações interativas.
+Para a organização das tarefas, a equipe utilizou ferramentas de gerenciamento e comunicação online, permitindo acompanhamento contínuo das etapas do projeto de maneira síncrona e assíncrona. As reuniões ocorreram presencialmente e virtualmente, conforme a necessidade do grupo e orientação docente.
+As atividades desenvolvidas envolveram pesquisa bibliográfica, coleta e tratamento de dados esportivos e econômicos, análise estatística, desenvolvimento das visualizações gráficas, aplicação de questionários e elaboração do relatório final.
+
+\subsection{Descrição da forma de envolvimento do público participante na formulação do projeto, seu desenvolvimento e avaliação, bem como as estratégias pelo grupo para mobilizá-los}
+
+A construção deste projeto extensionista ocorreu de forma colaborativa, considerando a interação entre a equipe acadêmica e pessoas interessadas em futebol, economia e tecnologia. A definição da temática partiu principalmente da observação das discussões presentes em redes sociais, fóruns esportivos e ambientes digitais, nos quais eram frequentes debates sobre o impacto econômico do futebol e a relação entre desempenho esportivo e desenvolvimento econômico dos países.
+
+Durante essas interações, foi identificado que muitas pessoas demonstravam interesse pelo tema, mas apresentavam dificuldades em compreender dados estatísticos, indicadores econômicos e análises mais técnicas. A partir dessa percepção, o grupo definiu como objetivo principal traduzir informações complexas em conteúdos mais acessíveis e visuais, aproximando a população da análise de dados.
+
+Na etapa de formulação do projeto, ocorreram trocas de ideias, debates e conversas informais que auxiliaram na delimitação do problema e na escolha das ações desenvolvidas pela equipe. Essas interações contribuíram para definir quais informações seriam mais relevantes e compreensíveis para quem acompanha discussões sobre futebol e economia.
+
+Além disso, foram aplicados questionários utilizando o Google Forms com o objetivo de avaliar a percepção das pessoas sobre a relação entre desempenho esportivo e indicadores econômicos, permitindo comparar o nível de compreensão antes e após a apresentação dos dados analisados no projeto.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Questionário.}
+    \label{fig:questionario}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.65\textwidth]{figura10.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+    \par{\small Link para o Questionário: \url{https://forms.gle/t3xFJpUMhQRNWNPh7 }}
+\end{figure}
+
+Durante o desenvolvimento das atividades, a equipe manteve contato contínuo com diferentes discussões relacionadas ao esporte e à tecnologia, observando opiniões, dúvidas e comentários sobre os dados apresentados. Essas contribuições auxiliaram na adaptação da linguagem utilizada nas análises e no desenvolvimento de visualizações mais claras e intuitivas.
+
+Na etapa de avaliação, as discussões e retornos obtidos ao longo do projeto permitiram identificar se as informações estavam sendo apresentadas de forma acessível e compreensível. As observações recebidas também contribuíram para melhorar a organização das análises e aperfeiçoar a comunicação visual dos resultados produzidos.
+
+Durante o desenvolvimento do projeto, a equipe acompanhou discussões e interações relacionadas ao tema em ambientes digitais, buscando compreender como as pessoas interpretavam informações sobre futebol e economia. Essas observações auxiliaram na construção das análises e na definição de formas mais acessíveis de apresentação dos dados, contribuindo para aproximar conteúdos estatísticos do cotidiano das pessoas interessadas no tema.
+
+\subsection{Grupo de trabalho}
+Para garantir a organização e o desenvolvimento eficiente do projeto extensionista, a equipe realizou a divisão das atividades em tarefas específicas, permitindo que cada integrante contribuísse de acordo com as demandas técnicas e acadêmicas da disciplina de Tópicos de Big Data em Python.
+\subsubsection{Tarefa 1 – Coleta e tratamento de dados}
+Objetivo: Obter, organizar e preparar as bases de dados econômicas e esportivas utilizadas nas análises do projeto.\vspace{,5cm}
+
+Responsáveis:
+\begin{itemize}
+    \item Liam Vitor Freitas Lopes
+    \item Murilo Coelho da Silva
+\end{itemize}
+
+
+Os integrantes desta etapa foram responsáveis pela pesquisa, coleta, organização e tratamento inicial dos dados utilizados no projeto, realizando limpeza e padronização das informações para utilização nas análises posteriores.
+
+\subsubsection{Tarefa 2 – Mineração e análise exploratória}
+Objetivo: Processar os dados para identificar possíveis correlações entre desempenho esportivo e indicadores econômicos.\vspace{,5cm}
+
+Responsáveis:
+\begin{itemize}
+    \item Nuno Rafael de Moura Bezerra
+    \item Lucas Oliveira Pinto Barros
+\end{itemize}
+
+
+Os integrantes responsáveis por esta tarefa desenvolveram análises exploratórias e interpretações estatísticas utilizando ferramentas em Python, buscando compreender padrões e relações entre os dados econômicos e esportivos analisados.
+
+\subsubsection{Tarefa 3 – Desenvolvimento do dashboard}
+Objetivo: Criar a interface visual interativa para apresentação dos resultados obtidos. \vspace{,5cm}
+
+Responsáveis:
+\begin{itemize}
+    \item Danylo Alves Ribeiro
+    \item Maria Clara Mariano Gomes
+\end{itemize}:
+
+
+Nesta etapa, os integrantes desenvolveram visualizações gráficas e dashboards interativos, com o objetivo de transformar dados complexos em informações mais acessíveis e compreensíveis.
+
+
+\subsubsection{Tarefa 4 – Pesquisa de percepção com a comunidade}
+Objetivo: Identificar como as pessoas compreendem a relação entre futebol, economia e análise de dados. \vspace{,5cm}
+
+Responsáveis:
+\begin{itemize}
+    \item Cauã Mendes Barros
+    \item Lucas Carlos de Macedo
+\end{itemize}
+
+
+Os integrantes desta tarefa acompanharam discussões e opiniões relacionadas ao tema do projeto, auxiliando na adaptação da linguagem utilizada nas análises e na construção de formas mais acessíveis de apresentação das informações
+
+\subsubsection{Tarefa 5 – Consolidação e redação final}
+Objetivo: Integrar os resultados técnicos e acadêmicos para elaboração do relatório final do projeto. \vspace{,5cm}
+
+Responsáveis:
+\begin{itemize}
+    \item Caic Costa Santos
+    \item Gabriel de Oliveira Barbosa
+\end{itemize}
+
+
+Os integrantes desta etapa foram responsáveis pela consolidação das informações produzidas ao longo do projeto, organização das análises desenvolvidas e elaboração da redação acadêmica final conforme as normas da ABNT.
+
+\subsection{Metas, critérios ou indicadores de avaliação do projeto}
+
+Para garantir a efetividade do projeto extensionista, foram definidas metas relacionadas aos objetivos propostos, bem como critérios e indicadores que permitam acompanhar o desenvolvimento das atividades e avaliar os resultados obtidos ao longo da execução do trabalho na disciplina de Tópicos de Big Data em Python.
+
+A primeira meta do projeto consiste em analisar a relação entre desempenho esportivo e indicadores econômicos por meio da utilização de bases de dados públicas e ferramentas de análise em Python. Essa etapa será desenvolvida através da coleta, organização e interpretação de dados relacionados ao futebol e à economia. Como critério de avaliação, será considerada a capacidade da equipe em aplicar corretamente técnicas de análise de dados e interpretação das informações obtidas. O principal indicador será a produção de análises, gráficos e comparações fundamentadas nos dados coletados.
+
+Outra meta importante é desenvolver visualizações de dados acessíveis e compreensíveis para pessoas sem conhecimento técnico na área de Ciência de Dados. Para alcançar esse objetivo, serão utilizadas bibliotecas e recursos de visualização em Python, permitindo transformar dados complexos em informações visuais mais intuitivas. O critério de avaliação será a clareza das visualizações produzidas, enquanto o indicador será a facilidade de compreensão das análises apresentadas.
+
+O projeto também busca aplicar, na prática, os conhecimentos desenvolvidos na disciplina de Tópicos de Big Data em Python, especialmente conteúdos relacionados à manipulação de dados, organização de informações, análise estatística e visualização gráfica. O critério de avaliação será a utilização adequada das ferramentas computacionais estudadas durante a disciplina. Como indicador, será considerada a qualidade técnica das análises e dos recursos desenvolvidos pela equipe.
+
+Além disso, pretende-se estimular o interesse pela análise de dados aplicada ao contexto esportivo, utilizando o futebol como ferramenta de aproximação entre tecnologia e sociedade. O critério de avaliação será o nível de interesse observado durante as discussões relacionadas ao tema, tendo como indicador a participação e interação das pessoas envolvidas ao longo do desenvolvimento do projeto.
+
+Por fim, a avaliação geral será realizada de forma contínua, considerando o cumprimento das etapas previstas no cronograma, a organização das atividades desenvolvidas e a capacidade da equipe em atingir os objetivos propostos no início do projeto.
+
+\subsection{Recursos previstos}
+
+Para o desenvolvimento do presente projeto extensionista, foram utilizados recursos materiais e humanos necessários para a realização das atividades propostas na disciplina de Tópicos de Big Data em Python. Buscou-se priorizar o uso de ferramentas gratuitas e recursos já disponíveis aos integrantes da equipe, minimizando custos financeiros durante a execução do projeto.
+
+\subsubsection{Recursos materiais}
+
+Os principais recursos materiais utilizados foram computadores e notebooks pessoais dos integrantes da equipe, além de acesso à internet para realização de pesquisas, coleta de dados e desenvolvimento das análises computacionais.
+
+Também foram utilizados softwares gratuitos e ferramentas digitais voltadas para programação, organização e visualização de dados, especialmente a linguagem Python e bibliotecas destinadas à análise estatística e construção de gráficos e dashboards interativos.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Base de dados \texttt{DADOS\_PAISES\_COPA\_PIB\_v1.1} aberta no Microsoft Excel, contendo os valores de PIB dos países participantes das Copas do Mundo organizados por ano.}
+    \label{planilha}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura1.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+Além disso, foram utilizadas bases públicas de dados econômicos e esportivos disponíveis em plataformas digitais de acesso aberto, permitindo a obtenção das informações necessárias para as análises realizadas no projeto.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Interface da plataforma Kaggle exibindo a base de dados pública da FIFA World Cup.}
+    \label{fig:Kaggle}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura2.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Arquivos em formato CSV armazenados e estruturados no diretório local do projeto.}
+    \label{fig:CSV}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura3.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+\subsubsection{Recursos humanos}
+
+Os recursos humanos do projeto foram compostos pelos integrantes da equipe e pelo professor orientador, Prof. Douglas Lopes de Sousa Mendes, responsável pelo acompanhamento acadêmico e orientação das atividades desenvolvidas ao longo do projeto.
+
+Os integrantes da equipe atuaram na organização, desenvolvimento técnico, análise dos dados, construção das visualizações e elaboração do relatório acadêmico.
+
+Cada integrante participou de etapas específicas do projeto, conforme divisão de tarefas previamente definida pela equipe, contribuindo para o desenvolvimento coletivo das atividades
+
+\subsubsection{Recursos financeiros}
+
+O projeto foi desenvolvido priorizando estratégias de baixo custo, sem necessidade de investimentos financeiros significativos. Os recursos utilizados foram, em sua maioria, gratuitos ou já disponíveis aos integrantes da equipe.
+
+Não houve previsão de financiamento externo ou utilização de recursos financeiros específicos para execução do projeto. Eventuais custos relacionados ao acesso à internet, utilização de equipamentos pessoais ou deslocamentos foram assumidos pelos próprios integrantes da equipe.
+
+\subsection{Detalhamento técnico do projeto}
+
+O presente projeto foi desenvolvido no contexto da disciplina de Tópicos de Big Data em Python, utilizando ferramentas e técnicas de análise de dados para investigar a relação entre indicadores econômicos e desempenho esportivo no futebol. A proposta técnica do trabalho consistiu na coleta, organização, processamento e visualização de grandes volumes de dados esportivos e econômicos, permitindo a realização de análises comparativas e interpretações estatísticas.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Arquitetura de diretórios e organização dos módulos do sistema.}
+    \label{fig:diretórios}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura4.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+A primeira etapa técnica do projeto envolveu a coleta de dados provenientes de bases públicas relacionadas ao futebol e à economia. Foram utilizadas informações estatísticas sobre seleções, resultados esportivos, desempenho em competições internacionais e indicadores econômicos, como Produto Interno Bruto (PIB) e outros dados socioeconômicos disponibilizados por instituições oficiais e plataformas abertas.
+
+Após a obtenção das informações, os dados passaram por processos de limpeza, organização e tratamento utilizando a linguagem de programação Python. Nessa etapa, foram realizadas correções de inconsistências, padronização de informações e estruturação das bases de dados para possibilitar análises mais precisas e organizadas.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Fragmento do script em Python responsável pela limpeza e padronização dos dados macroeconômicos.}
+    \label{fig:limpeza}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura5.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Implementação em Python para o tratamento do histórico de jogos e input manual das edições de 2018 e 2022.}
+    \label{fig:manual}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.9\textwidth]{figura6.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Continuação do código da figura 7}
+    \label{fig:manual 2}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.9\textwidth]{figura6b.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+Na sequência, foram aplicadas técnicas de mineração e análise exploratória de dados com o objetivo de identificar possíveis relações entre desempenho esportivo e aspectos econômicos. Para isso, utilizaram-se recursos computacionais voltados para manipulação de dados, geração de estatísticas e interpretação de padrões observados nas bases analisadas.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Função desenvolvida para realizar o cruzamento (merge) analítico entre os dados das Copas e o PIB.}
+    \label{fig:cruzamento}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura7.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+Como parte da solução desenvolvida, também foram criadas visualizações gráficas e dashboards interativos para facilitar a interpretação das informações obtidas. O desenvolvimento dessas visualizações teve como objetivo tornar os dados mais acessíveis e compreensíveis, principalmente para pessoas sem conhecimento técnico em Ciência de Dados ou análise estatística. Como visto na figura 10 abaixo, que mostra um modelo protótipo da interface visual.
+
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{ Interface gráfica do painel interativo (Dashboard) exibindo a tela inicial e a visão geral dos indicadores do projeto.}
+    \label{fig:Dash1}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.6\textwidth]{F1.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{ Análise de correlação linear entre os indicadores econômicos e o desempenho esportivo das seleções.}
+    \label{fig:Dash2}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.6\textwidth]{F2.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Análise da evolução temporal e comportamento histórico dos indicadores das Copas do Mundo ao longo das edições.}
+    \label{fig:Dash3}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.7\textwidth]{F3.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Agrupamento analítico (Clustering) de dados econômicos aplicados a países-sede e campeões para identificação de padrões.}
+    \label{fig:Dash4}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.7\textwidth]{F4.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Análise do impacto econômico focado no Produto Interno Bruto (PIB) e desempenho em gols das nações participantes.}
+    \label{fig:Dash5}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.6\textwidth]{F5.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Ranking comparativo e distribuição de dados específicos relacionados às cidades-sedes e infraestrutura.}
+    \label{fig:Dash6}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.6\textwidth]{F6.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto.}
+\end{figure}
+
+
+Link: Repertório do código utilizado no dashboard: \url{https://github.com/lucaspnbrs/data-analysis}
+\vspace{0.6cm}
+
+O projeto utilizou ferramentas e bibliotecas da linguagem Python voltadas para análise e visualização de dados, permitindo integrar conceitos estudados na disciplina, como manipulação de bases de dados, processamento de informações e representação visual de resultados.
+
+Por fim, a solução tecnológica desenvolvida buscou demonstrar como técnicas de Big Data e análise de dados podem ser aplicadas em contextos esportivos e sociais, utilizando o futebol como ferramenta para aproximar a população de conteúdos relacionados à tecnologia, estatística e interpretação de dados.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Script principal (main.py) responsável pela orquestração de todos os módulos do pipeline de dados.}
+    \label{fig:main}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura8.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Dados do projeto (2026).}
+\end{figure}
+
+%--- ENCERRAMENTO ---
+\section{ENCERRAMENTO DO PROJETO}
+\subsection{Relato Coletivo}
+O desenvolvimento deste projeto extensionista possibilitou à equipe aplicar, de forma prática, os conhecimentos adquiridos na disciplina de Tópicos de Big Data em Python, integrando conceitos de análise de dados, visualização de informações e interpretação estatística em um contexto socialmente relevante.
+
+Os objetivos sociocomunitários propostos foram alcançados à medida que o projeto buscou aproximar temas relacionados à economia, futebol e tecnologia do cotidiano das pessoas, utilizando uma linguagem mais acessível e recursos visuais capazes de facilitar a compreensão das informações analisadas.
+
+Ao longo do projeto, a equipe percebeu que muitas discussões sobre futebol e impactos econômicos normalmente ocorrem com base em opiniões e senso comum, sem utilização adequada de dados e análises estatísticas. Dessa forma, o trabalho contribuiu para incentivar uma visão mais analítica e fundamentada sobre o tema, demonstrando como a Ciência de Dados pode auxiliar na interpretação de fenômenos esportivos e econômicos.
+
+A utilização de ferramentas em Python e técnicas de análise de dados permitiu transformar grandes volumes de informações em gráficos, comparações e visualizações mais compreensíveis, aproximando conteúdos técnicos da realidade das pessoas interessadas em esporte e tecnologia.
+
+Além dos resultados técnicos, o projeto também proporcionou crescimento acadêmico e profissional aos integrantes da equipe, fortalecendo habilidades relacionadas ao trabalho em grupo, organização de tarefas, interpretação de dados, desenvolvimento de soluções computacionais e elaboração de relatórios acadêmicos conforme as normas da ABNT.
+
+Por fim, o grupo considera que o projeto atingiu seus principais objetivos ao promover a integração entre conhecimento acadêmico, tecnologia e sociedade, demonstrando a importância da análise de dados como ferramenta de democratização da informação e incentivo ao pensamento crítico.
+
+\subsubsection{Avaliação de reação da parte interessada}
+Embora o projeto não tenha contado com parceiros institucionais formais, a equipe realizou uma avaliação baseada nas discussões e percepções observadas durante o desenvolvimento das atividades relacionadas ao tema.
+
+Considerando o interesse social existente em debates sobre futebol e economia, observou-se que a utilização de gráficos, dashboards e análises visuais tornou as informações mais compreensíveis e acessíveis. A organização dos dados em representações visuais facilitou a interpretação de conteúdos estatísticos que normalmente são apresentados de maneira técnica e pouco acessível ao público geral.
+
+As análises realizadas permitiram demonstrar como dados econômicos e esportivos podem ser interpretados de forma mais clara através da utilização de ferramentas de Ciência de Dados e recursos desenvolvidos em Python. Além disso, as discussões relacionadas ao projeto evidenciaram maior compreensão sobre a importância da análise de dados em temas frequentemente debatidos apenas com base em opiniões e senso comum.
+
+Dessa forma, a equipe considera que os objetivos propostos foram atingidos, especialmente no que se refere à democratização da informação, à aproximação entre tecnologia e sociedade e ao incentivo ao pensamento analítico na interpretação de temas relacionados ao futebol e à economia.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Caic Costa Santos
+
+\subsubsection{Contextualização}
+O projeto extensionista “Dados em Campo: Desmistificando o Impacto Econômico do Futebol com Ciência de Dados” foi desenvolvido na disciplina de Tópicos de Big Data em Python com o objetivo de analisar a relação entre economia e desempenho esportivo no futebol utilizando ferramentas de análise de dados e visualização em Python.
+
+O tema surgiu a partir da percepção de que muitas discussões sobre futebol e impacto econômico acontecem sem utilização de dados ou análises mais fundamentadas. Dessa forma, o projeto buscou transformar informações estatísticas em conteúdos mais acessíveis por meio de gráficos, dashboards e análises visuais.
+
+Minha participação ocorreu principalmente na etapa de consolidação das informações e elaboração da redação acadêmica final, atuando na organização textual do relatório, estruturação conforme as normas da ABNT e integração das análises desenvolvidas pela equipe.
+
+\subsubsection{Metodologia}
+A experiência foi desenvolvida durante o período letivo da disciplina, por meio de atividades colaborativas realizadas entre os integrantes da equipe. O projeto teve como foco a análise da relação entre desempenho esportivo e indicadores econômicos utilizando dados relacionados ao futebol.
+
+As atividades ocorreram em ambiente virtual e acadêmico, utilizando computadores pessoais, acesso à internet e ferramentas de programação em Python para desenvolvimento das análises e visualizações gráficas.
+
+Inicialmente, foi realizada a definição do tema e delimitação do problema. Em seguida, ocorreu a coleta e tratamento das bases de dados econômicas e esportivas utilizadas no projeto. Após a organização das informações, foram desenvolvidas análises exploratórias e comparações estatísticas utilizando recursos da linguagem Python.
+
+Posteriormente, a equipe criou gráficos e dashboards com o objetivo de tornar os dados mais acessíveis e compreensíveis. Na etapa final, foram realizadas a consolidação das informações produzidas e a elaboração do relatório acadêmico conforme as normas da ABNT, utilizando o editor LaTeX Overleaf, que permitiu maior precisão na formatação, padronização do texto e adequação às exigências acadêmicas.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Interface do editor Overleaf exibindo o código em LaTeX desenvolvido para a formatação e estruturação do relatório acadêmico conforme as normas da ABNT.}
+    \label{fig:latex}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura11.png}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria, LaTeX(2026).}
+\end{figure}
+
+\subsubsection{Resultados e discussão}
+A experiência permitiu aplicar, na prática, conhecimentos desenvolvidos na disciplina de Tópicos de Big Data em Python em um tema relacionado ao futebol e à economia. A expectativa inicial era desenvolver análises e visualizações capazes de facilitar a compreensão de informações estatísticas.
+
+Durante as atividades, foi possível perceber a importância da organização e tratamento dos dados para construção de análises mais claras e objetivas. O projeto resultou na elaboração de gráficos, dashboards e de um relatório acadêmico estruturado conforme os padrões científicos.
+
+A participação no projeto contribuiu para meu desenvolvimento acadêmico, principalmente em escrita acadêmica, organização das informações e trabalho em equipe. Entre as principais aprendizagens, destaco a importância da análise de dados e da utilização de recursos visuais para facilitar a interpretação das informações.
+
+Como dificuldade, destaco a integração das diferentes etapas do projeto e organização das análises produzidas pela equipe. Apesar disso, a experiência foi importante para compreender melhor a aplicação prática da Ciência de Dados em situações do cotidiano.
+
+\subsubsection{Reflexão aprofundada}
+A experiência vivenciada durante o projeto permitiu relacionar os conteúdos teóricos estudados na disciplina com uma aplicação prática voltada para um tema presente no cotidiano das pessoas. Ao longo das atividades, foi possível perceber que a análise de dados vai além do aspecto técnico, podendo também contribuir para tornar informações mais acessíveis e compreensíveis.
+
+Na prática, a relação entre tecnologia e sociedade ficou evidente durante o desenvolvimento das análises, organização dos dados e construção das visualizações em Python, demonstrando como conteúdos técnicos podem ser apresentados de forma mais clara ao público.
+
+Além disso, a experiência reforçou a importância do trabalho em equipe, da divisão de responsabilidades e da organização das atividades para o desenvolvimento de um projeto acadêmico.
+
+\subsubsection{Considerações finais}
+O projeto permitiu aplicar conhecimentos da disciplina de Tópicos de Big Data em Python em uma atividade prática relacionada ao futebol e à economia. A experiência demonstrou como a análise de dados e as visualizações em Python podem tornar informações mais acessíveis e compreensíveis.
+
+Além disso, o trabalho possibilitou identificar outros aspectos que poderiam ser explorados, como análises envolvendo indicadores sociais, desempenho financeiro de clubes e utilização de bases de dados mais amplas.
+
+Por fim, a experiência contribuiu para integrar tecnologia, pesquisa e extensão, fortalecendo a aplicação prática dos conhecimentos desenvolvidos na disciplina.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Cauã Mendes Barros
+
+\subsubsection{Contextualização}
+No âmbito do projeto desenvolvido pelo grupo, assumi, em parceria com Lucas Carlos Macêdo, a responsabilidade pela concepção e execução de uma pesquisa de opinião direcionada ao público em geral. O propósito central foi investigar como a população percebe os efeitos econômicos decorrentes da realização de uma Copa do Mundo, contribuindo com uma perspectiva social para complementar os dados quantitativos analisados pela equipe.
+
+A vivência proporcionada por essa etapa ampliou significativamente minha capacidade de análise crítica, meu domínio sobre técnicas de pesquisa social e minha habilidade de interpretar informações estatísticas aplicadas a contextos econômicos reais.
+
+Ao longo do desenvolvimento do projeto, coube a mim e ao colega Cauã Barros a tarefa de planejar e conduzir uma pesquisa voltada à compreensão da percepção popular acerca dos impactos econômicos gerados pela hospedagem de uma Copa do Mundo. A questão era verificar se, na visão dos respondentes, os retornos financeiros do evento justificam os  investimentos necessários para sua realização. do Mundo, especialmente se os benefícios financeiros realmente compensam os investimentos realizados.
+
+O instrumento de coleta foi elaborado por meio da plataforma Google Forms e distribuído entre estudantes, familiares e integrantes da comunidade local, de modo a reunir perspectivas diversas que pudessem ser confrontadas com os indicadores econômicos levantados pelos demais membros do grupo.
+
+\subsubsection{Metodologia}
+A abordagem metodológica adotada fundamentou-se na construção de um formulário digital composto por questões objetivas de múltipla escolha — cada uma contendo cinco alternativas —, todas relacionadas aos desdobramentos econômicos enfrentados pelos países-sede da Copa do Mundo.
+
+Entre as perguntas aplicadas estavam estas(Todas com 5 alternativas):
+\begin{itemize}
+\item “Você acredita que sediar uma Copa do Mundo traz benefícios econômicos para o país?” 
+
+\item “Qual setor você acredita que mais lucra durante a Copa do Mundo?” 
+
+\item “Você concorda com o uso de dinheiro público para construção ou reforma de estádios?” 
+
+\item "Na sua opinião, qual o principal benefício de sediar uma Copa do Mundo?" 
+
+\item "Qual o principal problema de sediar uma Copa do Mundo?' 
+\end{itemize}
+
+O formulário foi divulgado por meio de redes sociais e aplicativos de mensagens instantâneas, estratégia que viabilizou o alcance de participantes com perfis variados. Concluída a etapa de coleta, as respostas foram sistematizadas em gráficos e submetidas a uma análise comparativa com dados oficiais referentes a variações no PIB, fluxo turístico, geração de postos de trabalho e volume de gastos públicos nos países que já sediaram o torneio.
+
+\subsubsection{Resultados e discussão}
+Os dados obtidos com a pesquisa revelaram que a maioria dos participantes reconhece a existência de benefícios econômicos associados à realização da Copa do Mundo, destacando principalmente o incremento do turismo, a criação de empregos ainda que de caráter temporário e a modernização da infraestrutura urbana como principais ganhos. Contudo, parcela considerável dos respondentes demonstrou postura crítica em relação à magnitude dos recursos públicos mobilizados para o evento, sinalizando que tais investimentos poderiam ser mais bem aproveitados em setores prioritários como saúde, educação e saneamento básico.
+
+O cruzamento das respostas com os dados econômicos analisados pelo grupo evidenciou tanto convergências quanto discrepâncias relevantes. Em determinados casos, a percepção popular mostrou-se alinhada com os resultados observados nos países-sede; em outros, ficou evidente que alguns países registraram aumento expressivo nos gastos públicos sem que houvesse crescimento econômico proporcional no período pós-evento — o que contraria a expectativa de retorno frequentemente difundida.Essa análise comparativa foi fundamental para exercitar habilidades de interpretação crítica e compreender a complexidade da relação entre megaeventos esportivos e desenvolvimento econômico.
+
+\subsubsection{Reflexão aprofundada}
+A condução desta etapa do projeto suscitou reflexões que transcendem a dimensão técnica da pesquisa. Ficou evidente que a análise de dados, quando associada à escuta da percepção popular, torna-se uma ferramenta ainda mais poderosa para a compreensão de fenômenos sociais e econômicos complexos.
+
+A experiência reforçou a ideia de que grandes eventos esportivos não se restringem ao universo do entretenimento: eles envolvem decisões políticas de alto impacto, alocação de recursos públicos e consequências sociais duradouras, capazes de gerar posicionamentos bastante divergentes na sociedade. Compreender essas tensões a partir de dados concretos e da voz dos cidadãos confere maior profundidade a qualquer análise sobre o tema.
+
+\subsubsection{Considerações finais}
+O percurso trilhado ao longo deste projeto foi enriquecedor sob múltiplos aspectos. Do ponto de vista intelectual, aprofundou meu entendimento sobre economia, pesquisa social e análise de dados. Do ponto de vista prático, desenvolveu competências relevantes como comunicação, organização de informações e interpretação de resultados quantitativos e qualitativos. 
+
+Como perspectiva de continuidade, seria possível expandir o alcance da pesquisa, aumentando o número de participantes e diversificando os perfis socioeconômicos dos respondentes. Outra possibilidade promissora seria realizar comparações entre diferentes edições da Copa do Mundo, mapeando tendências e variações nos impactos econômicos ao longo do tempo — o que permitiria conclusões ainda mais sólidas e embasadas sobre os reais legados deixados pelo evento nos países-sede.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Danylo Alves Ribeiro
+
+\subsubsection{Contextualização}
+Este relato apresenta minha experiência durante o desenvolvimento do projeto de extensão da disciplina de Tópicos de Big Data em Python, cujo propósito consistiu em investigar a relação entre o Produto Interno Bruto (PIB) dos países e o desempenho histórico das seleções na Copa do Mundo FIFA. O trabalho teve como foco a utilização de técnicas analíticas e ferramentas de Business Intelligence para transformar dados brutos em informações acessíveis e interpretáveis. 
+
+Dentro da organização das atividades do grupo, minha participação esteve voltada para o desenvolvimento do dashboard interativo em Power BI, atuando em parceria com outra integrante da equipe. Nossa responsabilidade foi estruturar visualmente os resultados estatísticos previamente desenvolvidos por outro membro do grupo, buscando transformar análises técnicas em uma apresentação visual clara, objetiva e funcional para o usuário.
+
+\subsubsection{Metodologia}
+O projeto foi organizado em cinco etapas principais, nas quais todos os integrantes contribuíram de maneira colaborativa. Entretanto, minha participação esteve mais diretamente relacionada à terceira etapa, conforme descrito abaixo: 
+\begin{itemize}
+\item Task 1: Coleta e Preparação dos Dados: Levantamento, organização e padronização das bases de dados relacionadas aos indicadores econômicos e ao desempenho esportivo dos países analisados. 
+
+\item Task 2: Processamento e Análise dos Dados: Aplicação de técnicas estatísticas e mineração de dados para identificar padrões e possíveis relações entre variáveis econômicas e resultados esportivos. 
+
+\item Task 3: Desenvolvimento do Dashboard (Principal área de atuação): Participação na construção do dashboard no Power BI, incluindo a organização dos dados, ajustes na modelagem, definição da estrutura visual e elaboração de elementos interativos que facilitassem a interpretação das informações apresentadas. Além disso, houve apoio na adequação dos dados para garantir consistência e clareza na visualização dos resultados. 
+
+\item Task 4: Pesquisa de Percepção Social: Realização de ações voltadas à coleta de feedback do público externo, visando compreender o impacto do projeto na disseminação do conhecimento sobre análise de dados. 
+
+\item Task 5: Consolidação do Projeto: Integração dos resultados técnicos obtidos com as percepções coletadas, contribuindo para a construção do relatório final do projeto.
+\end{itemize}
+
+\subsubsection{Resultados e discussão}
+A experiência proporcionou uma melhor compreensão sobre a importância da visualização de dados na comunicação de resultados complexos. O dashboard desenvolvido permitiu transformar análises estatísticas em uma ferramenta interativa, possibilitando ao usuário explorar os dados e compreender os padrões identificados pela equipe. Os resultados demonstraram que a relação entre riqueza econômica e desempenho nas competições mundiais apresenta uma correlação relativamente baixa, indicando que, embora fatores econômicos possam exercer influência, o desempenho esportivo permanece fortemente associado a elementos imprevisíveis e multifatoriais. 
+
+Entre os desafios enfrentados durante o processo, destacou-se a necessidade de integrar resultados estatísticos previamente processados ao ambiente do Power BI de forma organizada e funcional. Essa dificuldade exigiu alinhamento entre os membros da equipe, ajustes na modelagem dos dados e maior compreensão sobre a lógica por trás das análises realizadas, fortalecendo o trabalho colaborativo e a troca de conhecimentos entre os integrantes. 
+
+\subsubsection{Reflexão aprofundada}
+A vivência no projeto permitiu compreender que a construção de dashboards vai além da simples criação de gráficos e indicadores visuais. O processo exige interpretação analítica, senso crítico e responsabilidade na forma como os dados são apresentados, uma vez que escolhas inadequadas de modelagem ou visualização podem comprometer a interpretação dos resultados. 
+
+Nesse contexto, foi possível perceber a importância de compreender os tratamentos estatísticos realizados previamente, como transformações matemáticas aplicadas aos dados econômicos, para evitar distorções visuais que prejudicassem a análise final. Assim, o projeto reforçou a relevância da integração entre estatística, tecnologia e comunicação visual na produção de informações confiáveis e acessíveis.
+
+\subsubsection{Considerações finais}
+A participação no projeto contribuiu significativamente para o desenvolvimento de conhecimentos práticos relacionados à análise de dados, Business Intelligence e interpretação de indicadores socioeconômicos. A experiência também permitiu compreender de maneira mais concreta como fatores econômicos podem influenciar aspectos estruturais do esporte, sem, contudo, eliminar o caráter competitivo e imprevisível das competições esportivas. Além do aprendizado técnico, o projeto fortaleceu competências como trabalho em equipe, resolução de problemas e organização de informações, demonstrando a importância da colaboração interdisciplinar no desenvolvimento de soluções baseadas em dados.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Gabriel de Oliveira Barbosa
+
+\subsubsection{Contextualização}
+Este projeto foi desenvolvido como parte de uma apresentação do trabalho de caráter extensionista da matéria \textit{Tópicos de Big Data em Python}. Onde, como seu principal tema, envolve o estudo da correlação entre o desenvolvimento econômico de países e os períodos das Copas do Mundo, levando em conta a influência de fatores como turismo e investimentos em infraestrutura nas nações que sediaram e participaram das edições passadas. 
+
+Toda essa ideia organizada por meio de uma interface dashboard, dados tratados, uma pesquisa a dentro de campo e em diversas fontes diferentes referenciadas dentro deste próprio relatório anteriormente vistas. Fui responsável principalmente pelo acompanhamento e questionamento do progresso dos demais membros, além de conferir, incluir, e pontuar demais detalhes dentro dos relatórios.
+
+Minha participação no projeto foi por meio da divisão de tarefa que envolve o desenvolvimento dos relatórios acadêmicos, onde juntamente com minha dupla Caic Costa Santos, organizamos e buscamos dados com os outros demais integrantes do trabalho, a fim de obter uma noção do desempenho e avanço das restantes outras divisões de tarefas. E por tudo isso resumir de forma textual, direta e formal, o que foi analisado por fins de critérios rigorosos. Seguindo e acompanhando detalhadamente todas as normas da ABNT (Associação Brasileira de Normas Técnicas) em relação a projetos acadêmicos. 
+
+\subsubsection{Metodologia}
+Foi utilizado para realização, refinamento e escrita dos relatórios o site depurador e editor da linguagem LaTex, Overleaf. Onde por meio dele foi capaz de se configurar mais detalhadamente características de um texto acadêmico, pois por meio do mesmo se permite uma maior liberdade para a formatação textual se comparada com outros análogos do meio de edição de texto, e em conformidade com o que é indicado para projetos acadêmicos pela ABNT. Nesta mesma plataforma, é possível melhor definir os critérios de escrita do texto, tornando o resultado final do texto, mais completo e protocolar.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Captura de tela do ambiente Overleaf demonstrando a escrita e edição do código em LaTeX utilizado na elaboração do relatório acadêmico.}
+    \label{fig:latex1}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura13.png}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria, Overleaf(2026).}
+\end{figure}
+
+Entre as normas seguidas pela ABNT primordialmente no texto, estão inclusas as NBR 14724 (responsável pela estrutura e formatação geral do texto, tal como: Fonte, margens e espaçamento), a NBR 6024 (Responsável pela numeração progressiva das partes do texto, como a exemplo a divisão entre tópicos e subtópicos consecutivos), a NBR 10520 (Responsável pela formatação das citações e similares referências dentro de um texto formal), a NBR 6027 (Sobre a formatação de sumários) dentre outras normas. Foi nessas pesquisas afundo da formatação e do acompanhamento foram onde desenvolvi melhores habilidades de sobre como melhor definir os parâmetros para um relatório acadêmico.
+
+\subsubsection{Resultados e discussão}
+Como resultado dos acompanhamentos dos principais objetivos deste texto, e análise dos resultados gerados das pesquisas de outras tarefas do grupo foi notado que havia influência desses analisados jogos definidos das outras tarefas no progresso econômico dos países analisados, o que pode ser observado nos gráficos que correlacionam o crescimento e redução do PIB de países que sediaram a copa, como a exemplo o disponível no documento referente as perguntas utilizadas, que aponta como houve o decréscimo e acréscimo notável na econômia de nações que participaram dos jogos.
+
+E sobre a atividade extensionista em geral, foram desenvolvidas fundamentalmente melhores noções do trabalho em equipe acerca da divisão de tarefas entre os integrantes, o aperfeiçoamento das dadas funções para cada, além de receber habilidades ligadas a uma melhor análise de dados coletados e noções de gráficos. 
+
+\subsubsection{Reflexão aprofundada}
+Por meio da observação do desenvolvimento das outras partes, e com base nos dados, foi observado que embora exista a relação do aumento do turismo e circulação de capital durante o período da copa, um dos principais fatores que gerem esse ganho, é a gestão econômica dos países escolhidos, e a capitalização dos ganhos por meio de medidas privadas e políticas que favoreceram ou denegriram a imagem das regiões participantes dos jogos.
+
+Um melhor proveito da popularidade alavancada pela visibilidade dada pelos jogos tem impactos produtivos no comedimento do poder econômico nacional de um determinado país posto em análise.
+
+\subsubsection{Considerações finais}
+Mesmo que o projeto tenha tido caráter acadêmico, os resultados obtidos podem ser úteis para órgãos públicos de turismo, secretarias municipais e estaduais de esporte, bem como para comitês organizadores de grandes eventos, a fim de desenvolver estratégias de melhor alcance de serviços ligados aos temas, como uma melhor comparação dos gastos e benefícios que se incluem na adoção do sediamento, e da participação desses jogos mundiais.
+
+A ampla base de dados utilizada para o estudo deste projeto, permitiu, desenvolver habilidades organizacionais de grandes quantidades de ‘data’ para os integrantes do grupo, conceito esse que é o principal objeto de estudo da matéria cobrada na matriz curricular do curso de Ciências da Computação, e de importante competência a ser praticada pelos atuais estudantes, e futuros profissionais da área.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Liam Vitor Freitas Lopes
+
+\subsubsection{Contextualização}
+O projeto extensionista desenvolvido na disciplina de \textit{Big Data em Python}, intitulado "Dados em Campo: Desmistificando o Impacto Econômico do Futebol com Ciência de Dados", surgiu como proposta de aproximar a comunidade acadêmica das ferramentas de ciência de dados por meio de um tema de amplo interesse popular: o futebol e sua relação com a economia.
+
+A iniciativa partiu do reconhecimento de que grandes eventos esportivos, como a Copa do Mundo FIFA, exercem influência direta e indireta sobre indicadores econômicos dos países-sede e das cidades anfitriãs. Quantificar e analisar esse impacto, porém, exige o domínio de técnicas de coleta, tratamento e análise de grandes volumes de dados — competências centrais da formação em Big Data.
+
+Minha participação concentrou-se na etapa de Coleta e Tratamento de Dados, que consistiu em reunir, organizar e padronizar as bases de dados brutas — tanto econômicas quanto esportivas — que serviriam de insumo para as análises subsequentes da equipe. Essa etapa foi desenvolvida em dupla: enquanto meu colega ficou responsável por levantar dados históricos de partidas entre seleções em todas as Copas do Mundo, assumi a responsabilidade de coletar indicadores econômicos (PIB) dos países participantes e das cidades brasileiras sedes da Copa de 2014, contemplando o período de dois anos antes e dois anos após o evento.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Base de dados \texttt{DADOS\_PAISES\_COPA\_PIB\_v1.1} aberta no Microsoft Excel, contendo os valores de PIB dos países participantes das Copas do Mundo organizados por ano.}
+    \label{fig:t}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura1.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria, Microsoft Excel (2026).}
+\end{figure}
+
+\subsubsection{Metodologia}
+\textbf{Local e Período:}
+
+A experiência foi realizada de forma predominantemente remota, com uso de computadores pessoais e ferramentas online, durante o semestre letivo de 2026. As atividades de coleta aconteceram ao longo de aproximadamente duas semanas, com reuniões de alinhamento realizadas de forma híbrida — parte presencial, nas dependências da instituição de ensino, e parte virtual, por meio de plataformas de comunicação como WhatsApp e Google Meet.
+
+\vspace{0.4cm}
+\textbf{Sujeitos Envolvidos:}
+
+Participaram diretamente dessa etapa dois integrantes da equipe do projeto. A divisão de tarefas foi acordada de forma colaborativa, levando em conta as afinidades e disponibilidades de cada um. Os demais membros do grupo, bem como o professor orientador da disciplina, acompanharam o andamento e forneceram orientações pontuais.
+
+\vspace{0.4cm}
+\textbf{Detalhamento das Etapas:}
+
+A metodologia de trabalho seguiu as seguintes etapas:
+\begin{itemize}
+    \item Identificação das fontes de dados: pesquisa e seleção dos repositórios públicos mais confiáveis para obtenção dos dados do PIB por país e por cidade brasileira, com destaque para o Banco Mundial (World Bank Open Data), IBGE, IPEA e Kaggle.
+    \item Definição do escopo temporal: para os países participantes das Copas do Mundo em geral, coletaram-se dados de PIB do ano imediatamente anterior à Copa, do próprio ano do torneio e do ano seguinte. Para as cidades-sede brasileiras da Copa de 2014 (Belém, Belo Horizonte, Brasília, Cuiabá, Curitiba, Fortaleza, Manaus, Natal, Porto Alegre, Recife, Rio de Janeiro e São Paulo), o recorte foi ampliado para dois anos antes (2012, 2013) e dois anos depois (2015, 2016).
+    \item Download e armazenamento das bases brutas: os arquivos foram obtidos em formatos .csv e armazenados em pasta compartilhada no grupo via WhatsApp para acesso de todos os integrantes.
+    \item Tratamento inicial em Python: utilização da biblioteca Pandas para leitura, inspeção e limpeza dos dados, incluindo tratamento de valores ausentes (NaN), padronização de nomes de países/cidades e conversão de tipos de dados.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Script LimparPIB.py desenvolvido em Python para tratamento da base de dados de PIB dos países, realizando renomeação de colunas, remoção de linhas vazias e conversão de valores com Pandas e NumPy.}
+    \label{fig:limpar}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura5.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria, Microsoft Visual Studio Code (2026).}
+\end{figure}
+
+\subsubsection{Resultados e discussão}
+\textbf{Expectativa vs. Vivido:}
+
+Antes de iniciar a etapa, minha expectativa era de que a coleta de dados econômicos seria uma tarefa relativamente direta: bastaria acessar portais governamentais ou do Banco Mundial e fazer o download dos arquivos. A realidade, porém, mostrou-se consideravelmente mais complexa.
+
+Os dados não vinham prontos para uso: exigiam filtragem extensiva, tratamento de inconsistências e, em alguns casos, cruzamento entre fontes diferentes para cobrir lacunas. Por exemplo, os dados de PIB municipal para cidades brasileiras apresentavam metodologias de cálculo distintas ao longo dos anos, exigindo atenção redobrada à compatibilidade entre períodos.
+
+\vspace{0.4cm}
+\textbf{Descrição do Observado:}
+
+Ao analisar os dados coletados de forma preliminar, já foi possível observar tendências interessantes: cidades como Manaus e Natal, que receberam grandes investimentos em infraestrutura para a Copa de 2014, apresentavam variações no PIB local nos anos subsequentes que divergiam de outras cidades-sede com economias mais consolidadas, como São Paulo e Rio de Janeiro. Isso sugeria que o impacto econômico do evento não foi homogêneo — uma hipótese que caberia às etapas de análise do grupo aprofundar.
+
+\vspace{0.4cm}
+\textbf{Descobertas, Aprendizagens e Sentimentos:}
+
+A experiência foi ao mesmo tempo desafiadora e enriquecedora. Senti, pela primeira vez de forma tão concreta, o que significa trabalhar com dados reais: o processo é mais artesanal do que os tutoriais sugerem. Cada base de dados tem sua personalidade — formatos diferentes, codificações distintas, campos com nomes semelhantes, mas significados divergentes.
+
+Aprendi na prática o valor das boas práticas de documentação: registrar as decisões tomadas durante a coleta foi essencial para que os colegas pudessem continuar o trabalho sem precisar refazer etapas. Percebi também que a qualidade da análise final depende diretamente da qualidade dos dados na entrada — o conceito de "garbage in, garbage out" deixou de ser abstrato.
+
+\vspace{0.4cm}
+\textbf{Dificuldades e Recomendações:}
+
+A principal dificuldade foi a dispersão das fontes: não existe um único repositório que centralize dados de PIB municipal brasileiro com séries históricas longas e padronizadas. Recomendo, para trabalhos futuros, iniciar a coleta com um mapeamento detalhado das fontes disponíveis antes de qualquer download, e priorizar fontes que ofereçam APIs — como o SIDRA/IBGE — para automatizar a atualização dos dados via Python.
+
+\subsubsection{Reflexão aprofundada}
+A teoria apresentada no relato coletivo abordou o pipeline clássico de Big Data — ingestão, armazenamento, processamento e análise — como etapas sequenciais e bem delimitadas. Vivendo a prática, percebi que essas fronteiras são muito mais fluidas: durante a coleta, já é necessário realizar decisões de tratamento; durante o tratamento, surgem perguntas que exigem retorno à coleta para buscar dados complementares.
+
+Do ponto de vista teórico, estudamos os três Vs do Big Data — Volume, Velocidade e Variedade. Minha etapa dialogou especialmente com o V de Variedade: os dados coletados tinham origens heterogêneas (Banco Mundial, IBGE) e granularidades diferentes (país, estado, município). Harmonizar essas dimensões foi o desafio central e o maior aprendizado prático.
+
+Outro ponto de reflexão foi a dimensão ética dos dados. Ao trabalhar com indicadores econômicos que afetam populações reais — como o PIB de cidades como Manaus, que recebeu o Estádio Arena Amazônia com investimento bilionário —, tornei-me mais consciente de que os números escondem realidades sociais complexas. A ciência de dados não é neutra: as escolhas de quais dados coletar, como tratá-los e como apresentá-los carregam consequências interpretativas e políticas.
+
+\subsubsection{Considerações finais}
+\textbf{Perspectivas de Trabalhos Futuros:}
+
+O conjunto de dados coletado abre diversas possibilidades de aprofundamento. Do ponto de vista da extensão, seria relevante compartilhar os resultados com comunidades locais das cidades-sede — especialmente nas que apresentaram legados econômicos mais controversos — promovendo debates sobre o uso do dinheiro público em megaeventos esportivos. Em termos de pesquisa, as bases organizadas poderiam alimentar modelos de regressão e séries temporais para mensurar o impacto líquido da Copa de 2014, controlando variáveis macroeconômicas como câmbio, inflação e ciclos eleitorais.
+
+\vspace{0.4cm}
+\textbf{Soluções Tecnológicas Alternativas:}
+
+Para a etapa de coleta, uma solução alternativa seria o uso de web scraping automatizado com as bibliotecas BeautifulSoup e Scrapy para capturar dados de portais que não disponibilizam APIs. Para o armazenamento e versionamento das bases brutas, ferramentas como DVC (Data Version Control) integradas ao Git permitiriam rastrear alterações nos dados ao longo do projeto.
+
+Na etapa de tratamento, o uso de Apache Spark — mesmo em ambiente local via PySpark — permitiria processar volumes maiores de dados com maior desempenho, preparando a equipe para lidar com datasets reais de nível corporativo.
+
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Lucas Carlos de Macedo
+
+\subsubsection{Contextualização}
+Durante o desenvolvimento do projeto fiquei responsável juntamente com Cauã Barros, pela elaboração e aplicação de um questionário voltado ao público geral. O objetivo foi compreender a percepção das pessoas sobre os impactos econômicos de sediar uma Copa do Mundo, especialmente se os benefícios financeiros realmente compensam os investimentos realizados. 
+
+O questionário foi criado utilizando o Google Forms e divulgado entre estudantes, familiares e membros da comunidade, permitindo coletar opiniões diversas para posterior comparação com os dados econômicos analisados pelo grupo.
+
+\subsubsection{Metodologia}
+A metodologia utilizada consistiu na criação de um formulário online contendo perguntas objetivas relacionadas aos impactos econômicos da Copa do Mundo nos países-sede.
+
+Entre as perguntas aplicadas estavam (Todas com 5 alternativas): 
+
+\begin{itemize}
+    \item “Você acredita que sediar uma Copa do Mundo traz benefícios econômicos para o país?”
+    \item “Qual setor você acredita que mais lucra durante a Copa do Mundo?”
+    \item “Você concorda com o uso de dinheiro público para construção ou reforma de estádios?” 
+    \item "Na sua opinião, qual o principal benefício de sediar uma Copa do Mundo?"
+    \item "Qual o principal problema de sediar uma Copa do Mundo?' 
+\end{itemize}
+ 
+  O formulário foi compartilhado por redes sociais e aplicativos de mensagem, permitindo alcançar diferentes perfis de participantes. Após a coleta das respostas, os resultados foram organizados em gráficos e comparados com dados reais sobre PIB, turismo, geração de empregos e gastos públicos dos países que sediaram o evento.
+
+\subsubsection{Resultados e discussão}
+A aplicação do questionário permitiu identificar que grande parte dos participantes acredita que sediar uma Copa do Mundo pode trazer benefícios econômicos, principalmente relacionados ao turismo, geração de empregos temporários e melhoria da infraestrutura.
+
+Entretanto, também foram observadas opiniões críticas sobre os altos gastos públicos envolvidos na realização do evento. Alguns participantes destacaram que os investimentos realizados poderiam ser direcionados para áreas como saúde e educação.
+
+Ao comparar as respostas com os dados analisados pelo grupo, foi possível perceber que, em alguns casos, a percepção popular coincide com os resultados econômicos observados nos países-sede. Porém, também foram identificadas divergências, já que determinados países apresentaram aumento nos gastos públicos sem crescimento econômico proporcional após o evento.
+
+Essa etapa do projeto contribuiu para desenvolver habilidades de análise crítica, interpretação de dados e compreensão da relação entre eventos esportivos e economia.
+
+\subsubsection{Reflexão aprofundada}
+A experiência proporcionou uma compreensão mais ampla sobre como a análise de dados pode ser utilizada para interpretar fenômenos sociais e econômicos. Além da parte técnica relacionada ao cruzamento de dados, a aplicação do questionário mostrou a importância de considerar também a percepção da população sobre determinados acontecimentos.
+
+Foi possível perceber que grandes eventos esportivos vão além do entretenimento, envolvendo decisões políticas, investimentos públicos e impactos sociais que podem gerar opiniões divergentes na sociedade. O projeto também demonstrou como ferramentas de coleta e análise de dados podem auxiliar na construção de debates mais fundamentados e críticos.
+
+\subsubsection{Considerações finais}
+O desenvolvimento do projeto permitiu ampliar os conhecimentos sobre análise de dados, economia e pesquisa social, além de estimular o pensamento crítico sobre os impactos da Copa do Mundo nos países-sede. 
+
+A experiência de elaborar e aplicar o questionário contribuiu para o desenvolvimento de habilidades relacionadas à comunicação, interpretação de resultados e organização de informações. 
+
+Como continuidade do projeto, poderiam ser realizadas pesquisas com uma quantidade maior de participantes ou incluir comparações entre diferentes edições da Copa do Mundo, permitindo análises ainda mais detalhadas sobre os impactos econômicos do evento.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Lucas Oliveira Pinto Barros
+
+\subsubsection{Contextualização}
+O projeto desenvolvido na disciplina de Big Data consistiu na análise de dados relacionados ao Produto Interno Bruto (PIB) de países e ao desempenho histórico de seleções nacionais nas edições da Copa do Mundo de futebol, com o objetivo de identificar possíveis correlações entre desenvolvimento econômico e sucesso esportivo em âmbito internacional.
+
+A participação do aluno se deu na segunda etapa do projeto (Tarefa 2), responsável pelo cruzamento e análise dos dados já tratados e padronizados pela dupla responsável pela Tarefa 1. O trabalho foi conduzido em parceria com o colega Nuno Rafael, com atuação conjunta e colaborativa em todas as etapas da tarefa, desde a recepção dos dados até a interpretação dos resultados obtidos.
+
+\subsubsection{Metodologia}
+A experiência foi conduzida de forma presencial e remota, em sessões de trabalho conjunto entre Lucas Oliveira Pinto Barros e Nuno Rafael, utilizando o ambiente Jupyter Notebook como principal ferramenta de desenvolvimento, documentação e execução interativa do processo analítico. A linguagem de programação adotada foi Python, amplamente utilizada em contextos de análise de dados e ciência de dados.
+
+Os dados recebidos já se encontravam limpos e padronizados, resultado do trabalho da dupla responsável pela Tarefa 1. O processo de análise seguiu as seguintes etapas:
+
+\begin{itemize}
+    \item Importação e inspeção dos datasets com a biblioteca Pandas, verificando estrutura, tipos de dados e consistência dos DataFrames recebidos;
+    \item Cruzamento dos datasets por meio de operações de merge e join entre as tabelas de PIB por país e os registros históricos de títulos em Copas do Mundo;
+    \item Análise exploratória com NumPy para cálculos estatísticos descritivos, incluindo médias, desvios padrão e rankings;
+    \item Geração de visualizações com as bibliotecas Matplotlib e Seaborn, com o objetivo de identificar padrões, outliers e correlações visuais entre as variáveis analisadas;
+    \item Interpretação conjunta dos resultados, com discussão dos achados e suas implicações no contexto do projeto.
+\end{itemize}
+
+\subsubsection{Resultados e discussão}
+A expectativa inicial era de que países com maior PIB concentrariam a maior parte dos títulos mundiais, hipótese que encontra respaldo em estudos sobre a relação entre desenvolvimento econômico e investimentos no esporte. Contudo, os resultados encontrados evidenciaram uma correlação parcial: embora países de alto PIB, como Alemanha e França, de fato acumulem parte significativa dos títulos, países como Uruguai e Argentina fogem ao padrão esperado, apresentando histórico expressivo de conquistas apesar de economias relativamente menores no contexto global.
+
+As visualizações geradas com Seaborn tornaram esse padrão evidente, permitindo identificar outliers de forma clara e objetiva. A experiência reforçou a compreensão de que dados econômicos isolados não são suficientes para explicar fenômenos complexos como o desempenho esportivo de uma nação, e que uma análise exploratória bem conduzida é etapa fundamental antes de qualquer conclusão ou modelagem preditiva.
+
+A principal dificuldade encontrada foi o alinhamento dos nomes dos países entre os diferentes datasets — por exemplo, a distinção entre 'Germany' e 'West Germany' —, o que exigiu um tratamento adicional não previsto no escopo inicial da Tarefa 2. Por outro lado, a qualidade dos dados entregues pela dupla da Tarefa 1 foi um fator facilitador, tendo agilizado significativamente o processo de integração e análise.
+
+\subsubsection{Reflexão aprofundada}
+Na teoria, a correlação entre variáveis socioeconômicas e resultados esportivos é um tema recorrente em estudos aplicados de ciência de dados e análise quantitativa. Na prática, a execução deste projeto evidenciou que a qualidade e a preparação dos dados exercem peso determinante sobre a qualidade das análises — aspecto amplamente discutido na literatura de Big Data, mas que só se compreende de fato ao percorrer o pipeline completo de processamento e análise.
+
+O trabalho colaborativo com Nuno Rafael também trouxe aprendizagens relevantes sobre a dinâmica de equipes em projetos de dados, nos quais as decisões tomadas em uma etapa impactam diretamente as etapas subsequentes. A comunicação entre as duplas da Tarefa 1 e Tarefa 2 foi essencial para a resolução dos problemas de padronização encontrados, reforçando a importância da documentação clara e da colaboração interdependente em projetos de maior escala.
+
+\subsubsection{Considerações finais}
+A análise realizada poderia ser aprofundada com a inclusão de variáveis adicionais, como o investimento público em esporte por país, o tamanho da população total e o histórico de participações em Copas do Mundo, o que permitiria a construção de modelos de correlação mais robustos e com maior poder explicativo.
+
+Do ponto de vista tecnológico, como soluções alternativas que poderiam ter sido implementadas para o projeto desenvolvido, destacam-se: a utilização de Apache Spark para processamento distribuído, especialmente em cenários com maior volume de dados; e o emprego de ferramentas de visualização interativa, como Plotly ou Power BI, para uma apresentação mais dinâmica dos resultados junto à gestão ou ao público não técnico.
+
+Para trabalhos futuros, identifica-se potencial na aplicação de modelos de regressão ou algoritmos de clustering para segmentar países por perfil econômico-esportivo, ampliando a capacidade analítica e a profundidade das conclusões extraídas dos dados disponíveis.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Maria Clara Mariano
+
+\subsubsection{Contextualização}
+O presente relato aborda a minha experiência no projeto de extensão em Tópicos de Big Data em Python, cujo objetivo foi analisar a correlação entre o PIB dos países e o seu desempenho histórico na Copa do Mundo FIFA. Dentro da divisão de trabalho da equipe, a minha atuação concentrou-se no desenvolvimento do dashboard interativo no Power BI, em um trabalho conjunto com outro colega. O nosso papel foi converter as modelagens estatísticas e os agrupamentos brutos gerados por um terceiro membro da equipe em uma solução visual intuitiva, dinâmica e analítica.
+
+\subsubsection{Metodologia}
+O projeto macro foi estruturado em cinco etapas principais. Embora a equipe tenha atuado de forma integrada em todo o ciclo, minha participação direta concentrou-se na Task 3, conforme detalhado a seguir:
+\begin{itemize}
+    \item Task 1: Coleta e Tratamento de Dados: Obtenção e organização das bases de dados brutas (econômicas e esportivas) para análise.
+    \item Task 2: Mineração e Análise Exploratória: Processamento dos dados para identificar as correlações reais entre o desempenho em campo e o PIB.
+    \item Task 3: Desenvolvimento do Dashboard (Foco da minha atuação): Criação da interface visual interativa no Power BI. Nesta etapa, trabalhei na higienização final dos dados via Power Query, modelagem de medidas dinâmicas em DAX (como o coeficiente de Pearson) e estruturação do layout para garantir uma navegação fluida.
+    \item Task 4: Pesquisa de Percepção com a Comunidade: Aplicação de formulários de escuta para medir o impacto do projeto no entendimento do público externo.
+    \item Task 5: Consolidação e Redação Final: Cruzamento dos dados técnicos com o feedback social para a redação do relatório acadêmico.
+\end{itemize}
+
+\subsubsection{Resultados e discussão}
+A prática exigiu um forte entendimento estatístico para traduzir conceitos complexos. O produto final permitiu ao usuário interagir com os dados e constatar a conclusão da equipe: a relação entre riqueza e sucesso no futebol é fraca ($r \approx 0,25$), o que reforça o caráter democrático e imprevisível do esporte.
+
+A maior dificuldade técnica enfrentada pela dupla de BI foi integrar, de forma lógica, os resultados estáticos gerados externamente pelo analista (como os eixos do PCA) dentro do ambiente dinâmico do Power BI. Essa barreira foi superada por meio da modelagem de tabelas auxiliares. O processo mitigou gargalos e reforçou a importância da sinergia e da coesão no trabalho em equipe.
+
+\subsubsection{Reflexão aprofundada}
+A literatura acadêmica de Business Intelligence enfatiza que um dashboard deve aplicar o storytelling de dados de forma autônoma. No nosso projeto, isso foi levado à risca. Compreendemos que o desenvolvedor de dashboards não é apenas um criador de gráficos, mas um tradutor analítico. Se tivéssemos ignorado a lógica matemática da transformação logarítmica do PIB aplicada pelo nosso colega e plotado o PIB nominal bruto por critérios meramente estéticos, teríamos gerado um gráfico distorcido, com pontos esmagados na tela, arruinando a fundamentação científica e a interpretabilidade do trabalho.
+
+\subsubsection{Considerações finais}
+O projeto foi altamente benéfico para compreender, sob uma perspectiva prática e baseada em dados, como os indicadores macroeconômicos se comportam e influenciam o cenário esportivo global e local. A análise permitiu observar como o porte econômico impacta diretamente a infraestrutura e a atratividade dos eventos nas cidades e países-sede (como evidenciado no recorte da Copa de 2014 no Brasil), ao mesmo tempo em que a imprevisibilidade do esporte se mantém soberana em campo.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Murilo Coelho da Silva
+
+Nesta seção, apresento minha perspectiva individual sobre o desenvolvimento do projeto que investigou a relação entre a realização da Copa do Mundo FIFA e indicadores econômicos dos países participantes, com ênfase no Produto Interno Bruto (PIB).
+
+\subsubsection{Contextualização}
+O presente trabalho foi desenvolvido no âmbito de uma disciplina de extensão universitária e teve como objeto de estudo a relação entre a Copa do Mundo de Futebol e o desempenho econômico — medido principalmente pelo PIB — dos países sede e participantes ao longo das edições do torneio.
+
+Minha participação no projeto foi de natureza predominantemente prática, com foco na etapa de coleta, integração e limpeza de dados. Fui responsável por localizar bases de dados públicas na plataforma Kaggle relacionadas ao histórico de partidas da Copa do Mundo, bem como por buscar e acrescentar manualmente dados das edições de 2018 (Rússia) e 2022 (Qatar), que não constavam de forma completa nas fontes originais. Além disso, organizei e padronizei as tabelas para que pudessem ser cruzadas com os dados macroeconômicos obtidos do Banco Mundial.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Código de limpar a tabela dos jogos .}
+    \label{fig:cod}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.9\textwidth]{figura6.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Continuação da figura 21.}
+    \label{fig:code}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=0.9\textwidth]{figura6b.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria.}
+\end{figure}
+
+\vspace{0.6cm}
+
+O projeto se insere em um contexto mais amplo de debate sobre os legados econômicos de megaeventos esportivos, tema de crescente relevância dado o volume de investimento público mobilizado por países em desenvolvimento para sediar competições dessa magnitude.
+
+\subsubsection{Metodologia}
+A experiência foi desenvolvida de forma remota e individual na etapa de preparação dos dados, com posterior integração ao trabalho coletivo do grupo. O processo metodológico seguiu as seguintes etapas:
+
+\textbf{Local e sujeitos envolvidos:} O trabalho foi realizado de forma autônoma, utilizando ferramentas de análise de dados disponíveis publicamente. As fontes primárias dos dados foram a plataforma Kaggle, que disponibiliza conjuntos de dados históricos sobre a Copa do Mundo, e o portal do Banco Mundial, para os dados de PIB por país.
+\vspace{0.4cm}
+
+\textbf{Período e abrangência:} Os dados coletados abrangem todas as edições da Copa do Mundo de 1930 a 2022, totalizando 22 torneios. A tabela principal \texttt{(WorldCup\_Economia\_Completo.csv)} reúne 884 registros de partidas com informações de ano, fase, estádio, cidade, times participantes e público presente. A tabela de PIB \texttt{(PIB\_Paises\_Completo\_Limpo.csv)} consolida dados econômicos de 73 países ao longo de décadas, cobrindo os anos coincidentes com cada edição do torneio. A terceira tabela \texttt{(DADOS\_CIDADES\_BR\_COPA\_5\_ANOS.csv)} traz dados econômicos das 12 cidades-sede brasileiras no período de 2012 a 2016, permitindo uma análise mais detalhada do impacto local da Copa de 2014.
+\vspace{0.4cm}
+
+\textbf{Detalhamento das etapas:} O processo iniciou-se com o download das tabelas do Kaggle, seguido pela identificação de lacunas referentes às edições de 2018 e 2022. Os dados faltantes foram buscados manualmente em fontes oficiais e complementados nas planilhas. Na sequência, foram realizadas operações de limpeza: padronização de nomes de países, remoção de duplicatas, tratamento de valores ausentes e conversão de formatos monetários. Os scripts Python utilizados para o tratamento das tabelas foram documentados e compartilhados com a equipe para garantir a reprodutibilidade do processo.
+
+\subsubsection{Resultados e discussão}
+Expectativa versus vivido: Antes de iniciar o trabalho, minha expectativa era encontrar bases de dados já prontas e de fácil utilização. A realidade revelou-se mais complexa: os dados disponíveis no Kaggle cobriam adequadamente o período histórico até 2014, mas as edições mais recentes (2018 e 2022) apresentavam registros incompletos ou ausentes, exigindo um esforço adicional de pesquisa e curadoria manual.
+
+\begin{figure}[H]
+    \centering
+    % 1. O TÍTULO SEMPRE ACIMA
+    \caption{Plataforma Kaggle}
+    \label{fig:p Kag}
+    
+    % 2. A IMAGEM CENTRALIZADA
+    \includegraphics[width=1\textwidth]{figura2.jpeg}
+    
+    % 3. A FONTE SEMPRE ABAIXO (com tamanho menor)
+    \vspace{0.2cm}
+    \par{\small Fonte: Autoria própria.}
+\end{figure}
+
+
+Observações sobre os dados: Ao longo do processo de limpeza, foi possível observar padrões interessantes. A coluna de público (Attendance) evidencia uma tendência de crescimento da audiência presencial ao longo das décadas. A tabela de PIB revelou disparidades econômicas marcantes entre os países participantes. No caso das cidades brasileiras, os dados sugerem crescimento econômico consistente entre 2012 e 2016, período que coincide com o pré e o pós-Copa de 2014, ainda que seja difícil isolar o efeito do evento de outros fatores macroeconômicos.
+
+Sentimentos e aprendizados: A etapa de coleta e limpeza de dados revelou-se a mais trabalhosa e, ao mesmo tempo, a mais formativa. Percebi que a qualidade dos dados de entrada é determinante para qualquer conclusão analítica posterior. A experiência reforçou a importância de documentar cada decisão tomada durante a limpeza para garantir transparência e reprodutibilidade.
+
+Dificuldades: A principal dificuldade foi a inconsistência de nomenclaturas entre as diferentes fontes — países como 'República Tcheca', 'Tchecoslováquia' e 'Czech Republic' apareciam como entidades distintas, exigindo mapeamentos manuais. Outra dificuldade foi a ausência de dados de PIB para países que sofreram dissolução ou renomeação ao longo do século XX.
+
+Recomendações: Para trabalhos futuros, recomenda-se o uso de identificadores internacionais como o código ISO 3166 para facilitar o cruzamento entre bases de dados de diferentes origens.
+
+\subsubsection{Reflexão aprofundada}
+O relato coletivo do grupo destacou que grande parte das discussões sobre futebol e economia ocorre com base em opiniões e senso comum, sem o respaldo adequado de dados e análises estatísticas. Essa percepção dialoga diretamente com minha experiência prática: ao trabalhar com os dados históricos das Copas, ficou evidente que narrativas amplamente difundidas — como a do 'efeito Copa' que impulsionaria o PIB do país sede — não encontram respaldo simples nos números, ao menos não de forma uniforme entre as diferentes edições e contextos econômicos.
+
+O relato coletivo também ressalta o papel da Ciência de Dados como ferramenta de democratização da informação e incentivo ao pensamento crítico. Na minha atuação, essa dimensão se manifestou já na etapa de preparação: ao estruturar tabelas limpas e padronizadas, tornei possível que o restante da equipe — responsável pelas análises e visualizações — pudesse trabalhar com dados confiáveis e interpretáveis. Há uma cadeia de responsabilidades no trabalho com dados em que cada etapa condiciona a qualidade das seguintes.
+
+A experiência prática de lidar com dados reais reforça uma percepção importante: os dados brutos raramente contam uma história clara por si sós. A mediação analítica — as escolhas de como limpar, cruzar e interpretar os dados — é onde o verdadeiro trabalho intelectual acontece, e é também onde os vieses podem se instalar. Essa consciência metodológica é, talvez, o aprendizado mais valioso desta experiência de extensão.
+
+\subsubsection{Considerações finais}
+Ao longo do projeto, cada membro da equipe contribuiu com uma frente específica do trabalho. No meu caso, a contribuição central foi a construção da base de dados: localização e download das tabelas no Kaggle, complementação manual dos dados das edições de 2018 e 2022 a partir de fontes externas, e desenvolvimento dos scripts Python de tratamento e limpeza das tabelas. Esses materiais — os conjuntos de dados limpos e os códigos utilizados — constituem os principais entregáveis da minha participação e serviram de insumo para as etapas analíticas e visuais conduzidas pelos demais integrantes.
+
+Um resultado concreto do projeto foi o dashboard interativo desenvolvido por outro membro da equipe, que transformou os dados tratados em visualizações acessíveis sobre a relação entre Copa do Mundo e PIB dos países. Esse produto final ilustra bem a proposta do relato coletivo: utilizar recursos visuais para aproximar conteúdos técnicos do público geral e incentivar uma leitura mais analítica de temas normalmente debatidos apenas por impressão.
+
+Do ponto de vista do trabalho com dados, a experiência evidenciou que a etapa de coleta e curadoria — frequentemente invisível no produto final — é tão relevante quanto a análise em si. Garantir que os dados estejam corretos, completos e padronizados é condição para que qualquer conclusão subsequente tenha validade. Esse entendimento, consolidado na prática, representa uma contribuição duradoura para a formação acadêmica e profissional de todos os envolvidos.
+
+\subsection{Relato de Experiência Individual}
+\textbf{Discente:} Nuno Rafael de Moura Bezerra
+
+\subsubsection{Contextualização}
+O projeto da disciplina de Big Data teve como objetivo analisar dados sobre o Produto Interno Bruto (PIB) de diferentes países e o desempenho das seleções na Copa do Mundo, buscando entender possíveis relações entre desenvolvimento econômico e sucesso esportivo.
+
+A participação do aluno ocorreu na segunda etapa do projeto Task 2, voltada para a análise dos dados já organizados pela equipe da Task 1. O trabalho foi realizado em conjunto com o Lucas Oliveira um dos integrantes do grupo, de forma colaborativa, desde o momento de recebimento dos dados até a interpretação dos resultados.
+\subsubsection{Metodologia}
+A atividade foi desenvolvida de forma presencial e remota, utilizando o Jupyter Notebook para execução e organização das análises. A linguagem utilizada foi Python, com apoio de bibliotecas voltadas para ciência de dados, toda essas ações realizadas por os integrantes responsáveis pela task 2 Nuno Rafael e Lucas Oliveira. Os dados recebidos já estavam padronizados, permitindo a realização das seguintes etapas:
+
+\begin{itemize}
+\item Importação e verificação dos dados utilizando Pandas, verificando estruturas;
+
+\item Cruzamento das informações sobre PIB e títulos da Copa do Mundo por meio de operações de integração de tabelas;
+
+\item Análise exploratória com cálculos estatísticos simples para observar tendências e padrões;
+
+\item Criação de gráficos para facilitar a visualização dos resultados e auxiliar na interpretação dos dados;
+
+\item Discussão conjunta dos resultados encontrados.
+\end{itemize}
+\subsubsection{Resultados e discussão}
+A hipótese inicial era de que países com maior PIB teriam mais títulos mundiais. Os resultados mostraram uma relação parcial, já que países economicamente fortes apresentaram destaque, mas algumas exceções também foram observadas, como Argentina e Uruguai, que possuem grande histórico esportivo mesmo sem economias tão expressivas.
+
+Os gráficos ajudaram a identificar diferenças e padrões nos dados, mostrando que fatores econômicos, sozinhos, não explicam completamente o desempenho esportivo de um país. 
+
+Uma dificuldade encontrada foi a diferença na nomenclatura de alguns países entre os conjuntos de dados, exigindo ajustes para compatibilização das informações.
+\subsubsection{Reflexão aprofundada}
+A experiência demonstrou, na prática, a importância da organização e qualidade dos dados para uma análise eficiente. Além disso, o trabalho em equipe evidenciou como a comunicação entre as etapas do projeto influencia diretamente nos resultados obtidos. 
+
+A colaboração entre os participantes foi importante para solucionar problemas encontrados e garantir melhor interpretação das informações analisadas.
+\subsubsection{Considerações finais}
+O projeto mostrou que a análise poderia ser ampliada com novas variáveis, como investimentos em esporte, população e histórico de participação nas Copas, permitindo resultados mais completos.      Também poderiam ser utilizadas ferramentas mais avançadas de processamento e visualização de dados para aprofundar as análises e melhorar a apresentação dos resultados.
+% --- 6. REFERÊNCIAS ---
+\section{REFERÊNCIAS}
+BANCO MUNDIAL. Indicadores de desenvolvimento mundial. Washington, DC: World Bank, [s.d.]. Disponível em: https://data.worldbank.org. Acesso em: 4 abr. 2026.
+
+BRASIL. Ministério do Turismo. Impactos econômicos da Copa das Confederações 2013. Brasília, DF: Ministério do Turismo, 2013.
+
+FEDERAÇÃO INTERNACIONAL DE FUTEBOL (FIFA). Dados e estatísticas oficiais de futebol. Zurique: FIFA, [s.d.]. Disponível em: https://www.fifa.com. Acesso em: 4 abr. 2026.
+
+FUNDAÇÃO INSTITUTO DE PESQUISAS ECONÔMICAS (FIPE). Impacto econômico da Copa do Mundo FIFA 2014 no Brasil. São Paulo: FIPE, 2014.
+
+GOOGLE. Google Forms. [S.l.]: Google, [s.d.]. Disponível em: https://forms.google.com. Acesso em: 4 abr. 2026.
+
+INSPER. Impacto econômico de países vencedores da Copa do Mundo. São Paulo: Insper, [s.d.]. Disponível em: https://www.insper.edu.br. Acesso em: 4 abr. 2026.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). Indicadores econômicos brasileiros. Rio de Janeiro: IBGE, [s.d.]. Disponível em: https://www.ibge.gov.br. Acesso em: 4 abr. 2026.
+
+ROSLING, Hans; ROSLING, Ola; RÖNNLUND, Anna Rosling. Factfulness: o hábito libertador de só ter opiniões baseadas em fatos. Rio de Janeiro: Intrínseca, 2019.
+
+SILVA, J. R. et al. Impactos econômicos de megaeventos esportivos no Brasil. Revista Brasileira de Economia, [S.l.], [s.d.]. Disponível em: https://www.scielo.org. Acesso em: 4 abr. 2026.
+
+\end{document}

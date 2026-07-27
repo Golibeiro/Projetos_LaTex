@@ -1,0 +1,1 @@
+Neste diretório, estão salvos alguns de meus projetos que utilizam do LaTex, além de projetos que trabalhei em auxilío de C e Python.
